@@ -7,22 +7,13 @@ const app = express();
 // import the logger middleware
 const logger = require("./middlewares/logger");
 
+// import the test router
+const testRouter = require("./routes/testRoutes");
+
 // use the logger middleware
 app.use(logger);
 
-// request handler
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World!" });
-});
-app.post("/", (req, res) => {
-  res.json({ message: "Hello Post!" });
-});
-app.put("/", (req, res) => {
-  res.json({ message: "Hello Put!" });
-});
-app.delete("/", (req, res) => {
-  res.json({ message: "Hello Delete!" });
-});
+app.use("/api/v1/test", testRouter);
 
 // export the app
 module.exports = app;
