@@ -4,9 +4,6 @@ const express = require("express");
 // create an express app
 const app = express();
 
-// import morgan
-const morgan = require("morgan");
-
 // import the logger middleware
 const logger = require("./middlewares/logger");
 
